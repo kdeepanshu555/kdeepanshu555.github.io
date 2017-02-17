@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../angular.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/model.js"></script>
+    <script src="../js/controller.js"></script>
+</head>
+
+<body ng-app="cricModule" ng-controller="cricctrl">
+    <label for="">Choose Your Player</label>
+    <select ng-model="playerId">
+        <option selected value="28081">MS Dhoni</option>
+        <option value="253802">Virat Kohli</option>
+        <option value="235902">Rohit Sharma</option>
+    </select>
+    <button ng-click="searchByPid()">Submit</button>
+    <div ng-show="showIt">
+        <ul>
+            <li>Name :: {{result.data.fullName}}</li>
+            <li>Image :: <img ng-src='{{result.data.imageURL}}'></li>
+            <li>Country :: {{result.data.country}}</li>
+        </ul>
+    </div>
+</body>
+
+</html>
